@@ -1,0 +1,72 @@
+{
+  "name": "invictushub/laravel-microsoft-graph",
+  "description": "A Laravel Microsoft Graph API (Office365) package",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Invictus Hub",
+      "email": "info@invictushub.com",
+      "homepage": "https://invictushub.com"
+    }
+  ],
+  "homepage": "https://github.com/invictushub/laravel-microsoft-graph",
+  "keywords": [
+    "Laravel",
+    "MsGraph",
+    "Graph",
+    "Microsoft Graph",
+    "Office365",
+    "Microsoft365"
+  ],
+  "require": {
+    "illuminate/support": "^10.0",
+    "league/oauth2-client": "^2",
+    "guzzlehttp/guzzle": "7.x",
+    "ext-json": "*",
+    "ext-fileinfo": "*",
+    "ext-curl": "*",
+    "shitware-ltd/flysystem-msgraph": "^1.0",
+    "microsoft/microsoft-graph": "^1.70"
+  },
+  "require-dev": {
+    "orchestra/testbench": "^8.0",
+    "pestphp/pest": "^v2.24.2",
+    "pestphp/pest-plugin-laravel": "^v2.2.0",
+    "laravel/pint": "^1.13",
+    "pestphp/pest-plugin-type-coverage": "^2.4",
+    "mockery/mockery": "^1.6"
+  },
+  "autoload": {
+    "psr-4": {
+      "Invictushub\\MsGraph\\": "src/",
+      "Invictushub\\MsGraph\\Tests\\": "tests"
+    }
+  },
+  "autoload-dev": {
+    "classmap": [
+      "tests/TestCase.php"
+    ]
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Invictus\\MsGraph\\MsGraphServiceProvider"
+      ],
+      "aliases": {
+        "MsGraph": "Invictus\\MsGraph\\Facades\\MsGraph",
+        "MsGraphAdmin": "Invictus\\MsGraph\\Facades\\MsGraphAdmin"
+      }
+    }
+  },
+  "config": {
+    "allow-plugins": {
+      "pestphp/pest-plugin": true
+    }
+  },
+  "scripts": {
+    "pest": "vendor/bin/pest --parallel",
+    "pest-cov": "vendor/bin/pest --coverage",
+    "pest-type": "vendor/bin/pest --type-coverage",
+    "pint": "vendor/bin/pint"
+  }
+}
